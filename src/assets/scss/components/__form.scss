@@ -1,0 +1,370 @@
+@use "../abstract";
+
+.form {
+  width: 100%;
+  &:has(:invalid) &__submit {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &__group {
+    margin-top: 30px;
+
+    @include abstract.screen(md) {
+      margin-top: 20px;
+    }
+
+    &:has(:invalid):has(.form__input:not(:placeholder-shown)) {
+      .form__input-wrap {
+        border-color: red;
+        background: rgba(red, 0.1);
+      }
+
+      .form__error,
+      .form__input-error {
+        display: block;
+      }
+
+      .form__input-icon {
+        display: none;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    gap: 30px;
+
+    @include abstract.screen(md) {
+      gap: 20px;
+    }
+
+    @include abstract.screen(md) {
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  &__input-wrap,
+  &__text-area {
+    display: flex;
+    align-items: center;
+    border: 2px solid #d2d1d6;
+    padding: 12px;
+    border-radius: 10px;
+
+    &:focus-within {
+      border: 2px solid #0071dc;
+    }
+  }
+
+  &__text-area {
+    height: 120px;
+    padding: 12px;
+
+    &--small {
+      height: 90px;
+    }
+
+    &-input {
+      height: 100%;
+      resize: none;
+    }
+  }
+
+  &__input,
+  &__text-area-input {
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.6rem;
+
+    &::placeholder {
+      color: var(--form-input-color);
+    }
+
+    @include abstract.screen(sm) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__input {
+    &-wrap {
+      position: relative;
+      height: 50px;
+
+      &--small {
+        height: 40px;
+      }
+    }
+
+    &-icon,
+    &-error {
+      margin-left: 10px;
+    }
+
+    &-error {
+      display: none;
+      animation: shake 0.5s;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      width: 19px;
+      height: 19px;
+      border-radius: 5px;
+      border: 2px solid #9e9da8;
+    }
+
+    &:has(:checked) {
+      &::before {
+        border-color: #ffb700;
+        background: #ffb700;
+      }
+
+      &::after {
+        top: 5px;
+        left: 2px;
+        width: 14px;
+        height: 7px;
+        border: 2px solid;
+        border-color: transparent transparent #fff #fff;
+        rotate: -45deg;
+      }
+    }
+
+    &-label {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 2.2rem;
+      color: var(--form-color);
+      margin-left: 29px;
+
+      @include abstract.screen(sm) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.2rem;
+    color: #0071dc;
+
+    @include abstract.screen(sm) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__btns {
+    margin-top: 50px;
+  }
+
+  &__btn {
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.6rem;
+
+    &.btn--not-margin {
+      margin-top: 30px;
+    }
+
+    &-icon {
+      margin-right: 10px;
+    }
+  }
+
+  &__error {
+    margin-top: 12px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: red;
+    text-align: left;
+    display: none;
+  }
+
+  &__heading {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 3.2rem;
+
+    &--small {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+  }
+
+  &-select {
+    display: flex;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 1px solid #d2d1d6;
+    padding: 6px 0;
+
+    &__wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 158px;
+      padding: 0 14px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 2rem;
+
+      @include abstract.screen(xl) {
+        flex: 1;
+      }
+
+      &--short {
+        width: 108px;
+      }
+    }
+
+    &__separate {
+      width: 1px;
+      background: #d2d1d6;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 10px 20px;
+
+    @include abstract.screen(sm) {
+      column-gap: 7px;
+    }
+  }
+
+  &__tag {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: var(--filter-form-tag-bg-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2rem;
+    color: #9e9da8;
+    transition: color 0.25s;
+
+    &:hover {
+      color: var(--theme-color);
+    }
+  }
+
+  &__city {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    bottom: 44px;
+    left: 10px;
+    background: var(--form-city-bg);
+    border: 1px solid #d2d1d6;
+    border-radius: 10px;
+    max-height: 300px;
+
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 30px;
+    transition: opacity, visibility, translate;
+    transition-duration: 0.25s;
+
+    @include abstract.screen(sm) {
+      position: fixed;
+      inset: 0;
+      max-height: initial;
+      border-radius: 0px;
+    }
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      translate: 0 0;
+    }
+
+    &-close {
+      padding: 8px;
+      width: 44px;
+      height: 44px;
+      &-icon {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+
+    &-heading{
+      text-align: center;
+      padding: 12px;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    &-search {
+      height: 40px;
+      border-bottom: 1px solid #d2d1d6;
+      border-radius: 10px 10px 0 0 !important;
+
+      @include abstract.screen(lg) {
+        height: 44px;
+      }
+
+      @include abstract.screen(sm) {
+        border: 1px solid #ded1d6;
+        margin: 16px 30px 20px;
+        border-radius: 10px !important;
+      }
+    }
+
+    &-list {
+      flex: 1;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    &-item {
+      display: block;
+      padding: 6px 8px;
+      cursor: default;
+
+      @include abstract.screen(lg) {
+        padding: 12px 8px;
+      }
+
+      &--current {
+        background: orange;
+      }
+
+      &:not(&--current):hover {
+        background: var(--form-item-hover-bg);
+        cursor: pointer;
+      }
+    }
+  }
+}

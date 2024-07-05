@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,238 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.cart-items-container {
+  max-height: 280px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+.cart-items-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.cart-items-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Add this to your CSS file or inline style to ensure cross-browser compatibility */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Remove number input spinners in Firefox */
+}
+
+/* Custom styles for SweetAlert2 */
+.swal2-popup {
+  font-size: 1.6rem; /* Increase font size */
+  width: 500px; /* Adjust the width */
+}
+
+.swal2-title {
+  font-size: 2rem; /* Increase title font size */
+}
+
+.swal2-content {
+  font-size: 1.4rem; /* Increase content font size */
+}
+
+/* đánh giá 5sao  */
+.star-rating img {
+  width: 30px;
+  height: 30px;
+  margin: 0 2px;
+}
+/* Định dạng chung cho label và input */
+label, textarea {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Định dạng input */
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /* Cho phép thay đổi kích thước theo chiều dọc */
+}
+
+/* Định dạng nút submit */
+button[type="submit"] {
+  background-color: #007bff; /* Màu nền */
+  color: #fff; /* Màu chữ */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Định dạng nút submit khi đang được hover */
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Màu nền hover */
+}
+
+/* Định dạng khung rating */
+.star-rating {
+  display: inline-block;
+  font-size: 0; /* Loại bỏ khoảng trắng dưới dòng */
+}
+
+/* Định dạng sao */
+.review-card__star {
+  width: 1.5rem; /* Kích thước sao */
+  height: 1.5rem;
+  margin-right: 0.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+/* Main styles */
+/* .main {
+    padding: 20px 0;
+} */
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.sidebar__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.sidebar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar__item {
+    margin-bottom: 10px;
+}
+
+.sidebar__item a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.sidebar__item a:hover {
+    color: #0056b3;
+}
+
+/* Product styles */
+.product {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.product__wrap {
+    position: relative;
+}
+
+.product__img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.like {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.like:hover {
+    background-color: #f1f1f1;
+}
+
+.like__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.product__heading {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product__heading a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.product__heading a:hover {
+    color: #007bff;
+}
+
+.product__brand {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.product__infor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__price {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.product-rate {
+    display: flex;
+    align-items: center;
+}
+
+.product-rate__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.product-rate__val {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffcc00;
 }

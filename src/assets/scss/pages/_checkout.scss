@@ -1,0 +1,307 @@
+@use "../abstract";
+
+.checkout {
+  padding-bottom: 30px;
+
+  &-container {
+    margin-top: 30px;
+  }
+
+  &__breadscrumbs,
+  &-content,
+  &-pay,
+  &-gift {
+    background: var(--checkout-container-bg-color);
+  }
+
+  &-content,
+  &-pay,
+  &-gift {
+    padding: 30px;
+    border-radius: 20px;
+
+    @include abstract.screen(md) {
+      padding: 16px;
+    }
+
+    &__list {
+      margin-top: -30px;
+
+      @include abstract.screen(md) {
+        margin-top: -16px;
+      }
+    }
+
+    &__infor {
+      margin-top: 30px;
+    }
+  }
+
+  &-content + &-content {
+    margin-top: 30px;
+  }
+
+  &-content {
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    &__heading {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.42;
+    }
+
+    &__list-heading {
+      margin: 30px 0;
+    }
+
+    &__no-wrap {
+      white-space: nowrap;
+    }
+  }
+
+  &__sub-heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44444;
+  }
+
+  &-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px 0;
+    gap: 20px;
+    border-bottom: 1px solid var(--checkout-item-border-color);
+
+    @include abstract.screen(md) {
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    @include abstract.screen(lg) {
+      gap: 16px;
+    }
+
+    &__thumb {
+      width: 172px;
+      height: 172px;
+      object-fit: contain;
+
+      @include abstract.screen(xxl) {
+        width: 100px;
+        height: 100px;
+      }
+
+      @include abstract.screen(sm) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &__content {
+      flex: 1;
+      display: flex;
+
+      &-left {
+        flex: 1;
+      }
+
+      &-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        @include abstract.screen(md) {
+          align-items: flex-start;
+          margin-top: 16px;
+        }
+      }
+
+      @include abstract.screen(md) {
+        flex-direction: column;
+      }
+    }
+
+    &__heading,
+    &__desc {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.44444;
+    }
+
+    &__heading {
+      max-width: 374px;
+    }
+
+    &__desc {
+      margin: 16px 0;
+      color: #9e9da8;
+
+      &--color {
+        color: #67b044;
+      }
+    }
+
+    &__controls,
+    &__control {
+      display: flex;
+      align-items: center;
+    }
+
+    &__controls {
+      gap: 20px;
+
+      @include abstract.screen(md) {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+    }
+
+    &__control {
+      gap: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--checkout-item-border-color);
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.47;
+    }
+
+    &__price {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.454545;
+    }
+
+    &__cta {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      @include abstract.screen(md) {
+        margin-top: 8px;
+      }
+    }
+
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+    }
+  }
+
+  &-continue {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.44444;
+
+      &-icon {
+        rotate: 90deg;
+        transition: translate ease 0.25s;
+      }
+
+      &:hover &-icon {
+        translate: -6px;
+      }
+    }
+  }
+
+  &-infor {
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__row + &__row {
+      margin-top: 10px;
+    }
+
+    &__title,
+    &__data {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.44444;
+
+      &--big {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.45455;
+      }
+    }
+
+    &__separate {
+      height: 1px;
+      margin: 30px 0;
+      background: var(--checkout-item-border-color);
+    }
+  }
+
+  &-pay {
+    * {
+      font-size: 1.6rem;
+    }
+
+    &__separate {
+      margin: 14px 0;
+    }
+
+    &__btn {
+      margin-top: 48px;
+    }
+
+    &__desc {
+      margin-top: 6px;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.47;
+    }
+  }
+
+  &-gift {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &__wrapper {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 76px;
+      height: 76px;
+      border-radius: 14px;
+      background: rgba(#7644e1, 0.1);
+    }
+
+    &__heading {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.44444;
+    }
+
+    &__desc {
+      margin-top: 10px;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.4285;
+    }
+  }
+}

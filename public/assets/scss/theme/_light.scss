@@ -1,0 +1,134 @@
+@use "../abstract";
+
+html {
+  --theme-color: #1a162e;
+  --icon-color: brightness(0) saturate(100%) invert(7%) sepia(10%) saturate(5575%) hue-rotate(217deg) brightness(101%)
+    contrast(95%);
+  --body-bg: #f6f6f6;
+  --header-bg-color: #eee;
+  --btn-bg-color: #fff;
+  --header-separate-color: #ededf6;
+  --btn-shadow: rgba(237, 237, 246, 0.2);
+  --avt-shadow: rgba(0, 0, 0, 0.08);
+
+  @include abstract.screen(lg) {
+    --header-bg-color: #fff;
+    --header-shadow-color: #ededf633;
+  }
+
+  // Dropdown
+  --dropdown-bg-color: #fff;
+  --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
+
+  // Menu
+  --menu-border-color: #d2d1d6;
+
+  // Sidebar
+  --sidebar-bg: #fff;
+  --sidebar-shadow-color: #c8c8c866;
+
+  // Cate-item
+  --cate-item-bg: #eeeeee;
+  --cate-item-thumb-bg: #fff;
+  --cate-item-color: #000;
+
+  @include abstract.screen(md) {
+    --cate-item-bg: #fff;
+  }
+
+  // Buttons
+
+  // Filter button
+  --filter-btn-color: #6c6c72;
+  --filter-btn-bg-color: #fff;
+
+  // Like button
+  --like-bg-color: #fff;
+
+  // Product
+  --product-bg-color: #fff;
+  --product-shadow-color: #ededf633;
+
+  // Filter form
+  --filter-form-bg-color: #fff;
+  --filter-form-shadow-color: rgba(200, 200, 200, 0.4);
+  --filter-form-input-color: #1a162e;
+  --filter-form-tag-bg-color: #f8f8f8;
+
+  // Footer
+  --footer-bg-color: var(--header-bg-color);
+
+  // Form
+  --form-heading-color: #1a162e;
+  --form-input-color: #d2d1d6;
+  --form-city-bg: #fff;
+  --form-item-hover-bg: #ebebeb;
+
+  // Authentication page
+  --auth-media-bg-color: #fafafd;
+  --auth-content-bg-color: #fff;
+
+  // Product detail page
+  --product-detail-bg: #fff;
+  --product-infor-color: #1a162e;
+  --product-infor-bg-color: #f6f6f6;
+  --product-form-tag: #ededf6;
+  --product-preview-bg-color: #fff;
+
+  @include abstract.screen(lg) {
+    --product-detail-bg: #fafafd;
+    --product-infor-bg-color: #fff;
+  }
+
+  // Breadscrumbs
+  --breadscrumb-bg-color: #f6f6f6;
+  --breadscrumb-shadow: #ededf633;
+
+  @include abstract.screen(lg) {
+    --breadscrumb-bg-color: #fff;
+  }
+
+  // Search bar
+  --search-bar-bg-color: #fff;
+
+  // Review card
+  --review-card-bg-color: #fafafd;
+  @include abstract.screen(xl) {
+    --review-card-bg-color: #fff;
+  }
+
+  // Text content
+  --text-content-hr-bg: #ebebeb;
+
+  // Cart
+  --cart-bg-color: #fff;
+  --cart-color: #1a162e;
+  --cart-dropshadow-color: #ede9e9;
+
+  // Checkout page
+  --checkout-container-bg-color: #fff;
+  --checkout-item-border-color: #d2d1d6;
+  --checkout-payment-bg: #f6f6f6;
+
+  // Dialog
+  --modal--bg: #fff;
+
+  // Payment
+  --payment-select-border: brightness(0) saturate(100%) invert(78%) sepia(7%) saturate(359%) hue-rotate(206deg)
+    brightness(81%) contrast(85%);
+
+  // Profile
+  --profile-content-bg: #fff;
+  --new-card-color: #d2d1d6;
+  --profile-sidebar-bg: #fff;
+  --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+  --profile-link-hover: #ebebeb;
+  --profile-content-shadow: rgba(237, 237, 246, 0.2);
+  --profile-infor-img-bg: #fff;
+  --profile-infor-bg: #f6f6f6;
+  --profile-item-bg: #d2d1d6;
+}
+
+.icon {
+  filter: var(--icon-color);
+}

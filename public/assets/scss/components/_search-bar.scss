@@ -1,0 +1,22 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background: var(--search-bar-bg-color);
+
+  &__input {
+    flex: 1;
+    padding: 13px 0 13px 15px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4285;
+
+    &::placeholder {
+      color: #9e9da8;
+    }
+  }
+
+  &__icon{
+    padding: 13px 15px;
+  }
+}

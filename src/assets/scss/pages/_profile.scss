@@ -1,0 +1,346 @@
+@use "../abstract";
+
+.profile {
+  margin-bottom: 42px;
+
+  &-container {
+    margin-top: 30px;
+  }
+
+  &-sidebar {
+    padding-bottom: 30px;
+    border-radius: 20px;
+    background: var(--profile-sidebar-bg);
+    box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow);
+  }
+
+  &-user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px 20px 0 0;
+    padding: 35px 0 20px;
+    background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 100%),
+      url(../img/profile/profile-user.png) no-repeat center / cover;
+    color: #fff;
+
+    &__avatar {
+      width: 121px;
+      height: 121px;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      object-fit: cover;
+      background: #ccc;
+      background-clip: content-box;
+      box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+    }
+
+    &__name {
+      margin-top: 15px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.4444;
+    }
+
+    &__desc {
+      margin-top: 6px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.47;
+    }
+  }
+
+  &-menu {
+    margin-top: 30px;
+    padding: 0 30px;
+
+    &__heading {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.4444;
+    }
+
+    &__list {
+      margin-top: 6px;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 32px;
+      padding: 4px 6px;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.47;
+
+      &:hover {
+        background: var(--profile-link-hover);
+        border-radius: 8px;
+      }
+    }
+
+    &__icon-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 100%;
+    }
+  }
+
+  &-content {
+    border-radius: 20px;
+    padding: 30px;
+    background: var(--profile-content-bg);
+    box-shadow: 0px 20px 60px 10px var(--profile-content-shadow);
+
+    &__heading {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.416;
+
+      @include abstract.screen(sm) {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.44444;
+      }
+    }
+
+    &__desc {
+      margin: 4px 0 16px;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.47;
+
+      @include abstract.screen(sm) {
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.43;
+      }
+    }
+  }
+
+  &-card {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    background: var(--profile-card-bg);
+    color: #fff;
+
+    &__symbol {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      &-heading {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.4285;
+      }
+    }
+
+    &__series {
+      margin-top: 37px;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.4444;
+    }
+
+    &__footer {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+
+      &-desc,
+      &-expired {
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 1.75;
+      }
+
+      &-name,
+      &-date {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      &-time {
+        margin: 0 auto 0 40px;
+      }
+
+      &-circle {
+        position: relative;
+        width: 42px;
+        height: 28px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          height: 28px;
+          width: 28px;
+          border-radius: 50%;
+        }
+
+        &::before {
+          z-index: 1;
+          left: 0;
+          background: #f94545;
+          mix-blend-mode: hard-light;
+        }
+
+        &::after {
+          right: 0;
+          background: #ffb700;
+        }
+      }
+    }
+  }
+
+  &-infor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background: var(--profile-infor-bg);
+
+    &__img {
+      &-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 54px;
+        height: 54px;
+        border-radius: 8px;
+        padding: 15px;
+        background: var(--profile-infor-img-bg, #fff);
+      }
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.47;
+    }
+
+    &__desc {
+      margin-top: 6px;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.4286;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include abstract.screen(sm) {
+      align-items: flex-start;
+    }
+
+    &__img {
+      width: 151px;
+      height: 108px;
+      object-fit: contain;
+
+      @include abstract.screen(sm) {
+        width: 110px;
+        height: 78px;
+      }
+    }
+
+    &__infor {
+      margin-top: 10px;
+
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include abstract.screen(sm) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    &__heading {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.47;
+
+      @include abstract.screen(sm) {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.43;
+      }
+    }
+
+    &__price {
+      font-size: 2.2rem;
+      font-weight: 500;
+      line-height: 1.4545;
+
+      @include abstract.screen(sm) {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.44444;
+      }
+    }
+
+    &__separate {
+      margin: 20px 0;
+      height: 1px;
+      background: var(--profile-item-bg);
+    }
+
+    &__btn {
+      @include abstract.screen(sm) {
+        height: 40px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.43;
+      }
+    }
+  }
+}
+
+.new-card {
+  height: 100%;
+  min-height: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px dashed var(--new-card-color);
+  color: var(--new-card-color);
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__text {
+    margin-top: 14px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.4286;
+  }
+}

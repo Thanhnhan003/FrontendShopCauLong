@@ -1,0 +1,157 @@
+@use "../abstract";
+
+.auth {
+  display: flex;
+  min-height: 100vh;
+
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
+
+  &-content,
+  &-media {
+    flex: 1;
+    padding: 0 30px;
+  }
+
+  &-media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    background: var(--auth-media-bg-color);
+
+    &__logo,
+    &__next-btn {
+      position: absolute;
+      left: 50%;
+      translate: -50% 0;
+    }
+
+    &__logo {
+      top: 80px;
+    }
+
+    &__next-btn {
+      bottom: 50px;
+    }
+
+    &__img {
+      width: min(424px, 100%);
+      object-fit: cover;
+    }
+
+    &__desc {
+      max-width: 414px;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 2.6rem;
+
+      @include abstract.screen(sm) {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 2.2rem;
+      }
+    }
+  }
+
+  &-content {
+    background: var(--auth-content-bg-color);
+    padding-bottom: 50px;
+
+    @include abstract.screen(md) {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      transition: translate 0.3s;
+      overflow-y: auto;
+
+      &.hide {
+        translate: 100% 0;
+      }
+    }
+
+    @include abstract.screen(md) {
+      padding-bottom: 0;
+    }
+
+    &__wrap {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: min(460px, 100%);
+      padding-top: 50px;
+      margin: 0 auto;
+      text-align: center;
+
+      @include abstract.screen(md) {
+        padding-top: 28px;
+      }
+    }
+
+    &__heading {
+      margin-top: 50px;
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 4.4rem;
+      color: var(--form-heading-color);
+
+      @include abstract.screen(md) {
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+        margin-top: 24px;
+      }
+    }
+
+    &__desc {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 2.2rem;
+      color: #9e9da8;
+
+      @include abstract.screen(sm) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__form {
+    margin-top: 30px;
+    @include abstract.screen(sm) {
+      margin-top: 12px;
+    }
+
+    @include abstract.screen(sm) {
+      margin-top: 0;
+    }
+  }
+
+  &__text {
+    margin-top: 108px;
+    color: #9e9da8;
+
+    @include abstract.screen(md) {
+      margin-top: 56px;
+    }
+
+    @include abstract.screen(sm) {
+      margin-top: 40px;
+    }
+  }
+
+  &__link {
+    margin-left: 10px;
+  }
+
+  &__message {
+    margin-top: 30px;
+  }
+
+  &__form-reset {
+    margin-top: 10px;
+  }
+}

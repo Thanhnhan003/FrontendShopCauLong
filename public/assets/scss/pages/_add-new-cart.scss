@@ -1,0 +1,25 @@
+@use "../abstract";
+
+.add-cart {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &-btn {
+      padding: 8px 12px;
+    }
+    &-heading {
+      font-size: 2.2rem;
+      font-weight: 500;
+      line-height: 1.4545;
+    }
+  }
+
+  @include abstract.screen(lg) {
+    &__row {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}

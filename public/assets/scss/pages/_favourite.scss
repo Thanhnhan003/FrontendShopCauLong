@@ -1,0 +1,59 @@
+@use "../abstract";
+
+.favourite {
+  &__heading {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.4545;
+  }
+
+  &__desc {
+    margin-top: 6px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.47;
+  }
+
+  &__check--header {
+    margin: 30px 0;
+  }
+
+  &-item {
+    align-items: flex-start;
+
+    &__controls-wrapper {
+      display: flex;
+      gap: 16px 30px;
+
+      @include abstract.screen(lg) {
+        flex-direction: column;
+      }
+    }
+
+    &__content-right {
+      gap: 20px;
+    }
+
+    &__content-btn {
+      @include abstract.screen(md) {
+        width: 80%;
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include abstract.screen(sm) {
+      flex-direction: column-reverse;
+      gap: 30px;
+      align-items: flex-start;
+
+      &__btn{
+        width: 100%;
+      }
+    }
+  }
+}

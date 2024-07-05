@@ -1,0 +1,197 @@
+@use "../abstract";
+
+.filter {
+  position: relative;
+  z-index: 1;
+
+  &__arrow {
+    position: absolute;
+    top: -18px;
+    right: 17px;
+    height: 21px;
+    z-index: 2;
+    filter: var(--filter-form-arrow-color);
+  }
+
+  &__wrap {
+    position: absolute;
+    right: 0;
+    top: 56px;
+
+    border-radius: 20px;
+    padding: 30px 0;
+    background: var(--filter-form-bg-color);
+    filter: drop-shadow(0px 40px 90px var(--filter-form-shadow-color));
+
+    @include abstract.screen(sm) {
+      width: 84vw;
+    }
+
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity, visibility;
+      transition-duration: 0.25s;
+    }
+  }
+
+  &__form {
+    margin-top: 30px;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__heading-top,
+  &__footer,
+  &__content {
+    padding: 0 30px;
+  }
+
+  &__content {
+    max-height: calc(100vh - 400px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    @include abstract.screen(xl) {
+      flex-direction: column;
+    }
+  }
+
+  &__separate {
+    width: 1px;
+    margin: 0 30px;
+    background: #eee;
+
+    @include abstract.screen(xl) {
+      width: 100%;
+      height: 1px;
+      margin: 30px 0;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 2px;
+    background: #d2d1d6;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 6px solid #ffb700;
+      background: var(--filter-form-bg-color);
+    }
+
+    &::before {
+      left: var(--min-val);
+    }
+
+    &::after {
+      left: var(--max-val);
+    }
+  }
+
+  &-form {
+    &__wrap {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+
+    &__heading {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 2rem;
+    }
+
+    &__input {
+      width: 100%;
+      padding-right: 10px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 2rem;
+      color: var(--filter-form--input-color);
+      background: transparent;
+
+      &::placeholder {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2.2rem;
+        color: #9e9da8;
+      }
+    }
+
+    &__container {
+      display: flex;
+      align-items: center;
+      width: 334px;
+      height: 44px;
+      padding: 10px 16px;
+      border: 1px solid #d2d1d6;
+      border-radius: 6px;
+      margin-top: 20px;
+
+      @include abstract.screen(sm) {
+        width: 100%;
+      }
+
+      &--short {
+        width: 121px;
+        height: 36px;
+        padding: 8px 12px;
+        margin-top: 0;
+
+        @include abstract.screen(xl) {
+          width: 100%;
+        }
+
+        & .filter-form__input {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+
+    @include abstract.screen(xl) {
+      padding-bottom: 12px;
+    }
+  }
+
+  &__cancel,
+  &__submit {
+    height: 38px;
+    padding: 0 10px;
+
+    @include abstract.screen(sm) {
+      flex: 1;
+    }
+  }
+
+  &__cancel {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  &__submit {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+}

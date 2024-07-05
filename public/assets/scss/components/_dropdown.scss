@@ -1,0 +1,166 @@
+@use "../abstract";
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  width: min(1240px, 100%);
+  padding-top: 54px;
+  display: none;
+
+  @include abstract.screen(lg) {
+    position: initial;
+    padding-top: 0;
+  }
+
+  &__body {
+    --padding: 30px;
+
+    position: relative;
+    padding: var(--padding);
+    border-radius: 20px;
+    background: var(--dropdown-bg-color);
+    box-shadow: 0 40px 90px 20px var(--dropdown-shadow-color);
+
+    &::before {
+      content: url("..//icon/dropdown-arrow.svg");
+      position: absolute;
+      top: -13px;
+      left: var(--arrow-left-pos);
+      translate: -50% 0;
+      filter: var(--dropdown-arrow-color);
+    }
+
+    @include abstract.screen(lg) {
+      padding: 0 40px;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    @include abstract.screen("sm") {
+      padding: 0 20px;
+    }
+  }
+}
+
+.menu {
+  position: relative;
+  --menu-width: 292px;
+
+  &-main {
+    width: var(--menu-width);
+    border-right: 1px solid var(--menu-border-color);
+    height: calc(min(596px, 100vh - 158px) - var(--padding) * 2);
+    overflow-y: auto;
+
+    @include abstract.screen(lg) {
+      width: 100%;
+      height: auto;
+      border-right: none;
+    }
+  }
+
+  &-col {
+    display: flex;
+    gap: 14px;
+
+    & + & {
+      margin-top: 30px;
+    }
+
+    &__item--active .sub-menu {
+      display: grid;
+    }
+
+    &__item--active > &__link,
+    &__item:hover > &__link {
+      color: #0071dc;
+      font-weight: 500;
+    }
+
+    &__icon {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+
+      &-symbol {
+        width: 30px;
+        height: 30px;
+      }
+
+      &-img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        object-fit: cover;
+        filter: var(--menu-icon-color);
+      }
+    }
+
+    &__content {
+      flex: 1;
+    }
+
+    &__heading {
+      font-weight: 500;
+      line-height: 1.5;
+
+      @include abstract.screen(lg) {
+        margin-bottom: 26px;
+      }
+    }
+
+    &__list {
+      margin-top: 13px;
+    }
+
+    @include abstract.screen(lg) {
+      &__list {
+        margin-top: 0;
+      }
+    }
+
+    &__link {
+      display: block;
+      padding: 7px 0;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.4285;
+    }
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--menu-width);
+
+  // display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+
+  padding-left: 30px;
+
+  overflow-y: auto;
+
+  display: none;
+
+  @include abstract.screen(lg) {
+    position: initial;
+    grid-template-columns: 1fr;
+  }
+
+  &--not-main {
+    position: initial;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include abstract.screen(lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

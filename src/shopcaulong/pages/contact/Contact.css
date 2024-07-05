@@ -1,0 +1,153 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    /* Default to column for mobile */
+    background-color: #f9f9f9;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* For larger screens (tablets and PCs) */
+@media (min-width: 768px) {
+    .contact-container {
+        flex-direction: row;
+        /* Switch to row for larger screens */
+    }
+}
+
+.contact-sidebar {
+    background-color: #f58220;
+    padding: 20px;
+    color: white;
+    width: 100%;
+    /* Default to full width for mobile */
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* For larger screens (tablets and PCs) */
+@media (min-width: 768px) {
+    .contact-sidebar {
+        width: 350px;
+        /* Fixed width for larger screens */
+    }
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.contact-text p {
+    margin: 0;
+}
+
+.contact-text strong {
+    display: block;
+    margin-top: 5px;
+}
+
+.icon-phone::before {
+    content: '\260E';
+    /* Placeholder for phone icon */
+}
+
+.icon-email::before {
+    content: '\2709';
+    /* Placeholder for email icon */
+}
+
+.icon-location::before {
+    content: '\1F4CD';
+    /* Placeholder for location icon */
+}
+
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    flex-grow: 1;
+    margin-top: 20px;
+    /* Add margin for separation on mobile */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* For larger screens (tablets and PCs) */
+@media (min-width: 768px) {
+    .contact-form {
+        margin-left: 20px;
+        /* Add left margin for larger screens */
+        margin-top: 0;
+        /* Remove top margin for larger screens */
+    }
+}
+
+.contact-form h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    /* Increase padding for a more prominent look */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    /* Increase font size for better readability */
+}
+
+textarea {
+    height: 150px;
+    /* Adjust height to match the image */
+    resize: none;
+}
+
+button.nutbamgui {
+    background-color: #f58220;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    /* Increase padding for a more prominent look */
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    /* Increase font size for better readability */
+    display: block;
+    margin: 0 auto;
+    /* Center the button */
+}
+
+button.nutbamgui:hover {
+    background-color: #e0721a;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}

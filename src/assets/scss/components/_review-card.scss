@@ -1,0 +1,80 @@
+@use "../abstract";
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 16px;
+  padding: 30px;
+  background: var(--review-card-bg-color);
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    @include abstract.screen(xl) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @include abstract.screen(md) {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+
+  &__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__name {
+    color: inherit;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.4545;
+
+    @include abstract.screen(xl) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__desc {
+    margin-top: 10px;
+    color: inherit;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &__rating {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include abstract.screen(xl) {
+      flex-direction: column;
+    }
+
+    @include abstract.screen(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__text {
+    color: inherit;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44444;
+  }
+}

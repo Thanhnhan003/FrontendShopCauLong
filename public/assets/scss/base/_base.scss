@@ -1,0 +1,80 @@
+@use "../abstract";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Gordita", sans-serif;
+  color: var(--theme-color);
+  background: var(--body-bg);
+  // height: 10000px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+input,
+select,
+textarea,
+button,
+img,
+label {
+  color: inherit;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+:is(textarea, input):-webkit-autofill,
+:is(textarea, input):-webkit-autofill:focus,
+:is(textarea, input):-webkit-autofill:active,
+:is(textarea, input):-webkit-autofill:hover {
+  transition: background-color 1s 9999s;
+  -webkit-text-fill-color: var(--theme-color);
+  caret-color: var(--theme-color);
+}
+
+.container {
+  @include abstract.screen(sm) {
+    --grid-gutter-x: 40px !important;
+  }
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: 600;
+}

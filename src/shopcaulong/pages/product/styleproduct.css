@@ -1,0 +1,293 @@
+.chinh {
+    /* background-color: #f8f9fa; */
+    padding: 20px;
+}
+
+.container.trang-chu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.chia-25 {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.chia-25 h2 {
+    font-size: 1.5em;
+    color: #333333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.chia-25 hr {
+    border: 0;
+    height: 1px;
+    background: #eeeeee;
+    margin-bottom: 15px;
+}
+.chia-25 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chia-25 li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chia-25 li input {
+    margin-right: 10px;
+}
+
+.chia-25 input[type="checkbox"] {
+    appearance: none;
+    background-color: #f0f0f0;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #cccccc;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+.chia-25 input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    box-shadow: inset 1em 1em #c19a6b;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    transform-origin: bottom left;
+}
+
+.chia-25 input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+
+.loc-theo-gia {
+    margin-top: 20px;
+}
+
+.loc-theo-gia h2 {
+    font-size: 1.5em;
+    color: #333333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.loc-theo-gia .sidebar-content {
+    padding: 10px 0;
+}
+
+.loc-theo-gia #slider-range {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.filter-type-price {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.filter-type-price label {
+    font-size: 1.1em;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.filter-type-price input {
+    border: none;
+    font-size: 1.1em;
+    text-align: center;
+    color: #333333;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 5px 10px;
+    width: calc(100% - 70px);
+}
+
+.ui-slider-horizontal .ui-slider-range {
+    background: #c19a6b;
+}
+
+.ui-slider .ui-slider-handle {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ui-slider .ui-slider-handle:focus {
+    outline: none;
+    border: 1px solid #666666;
+}
+
+
+/* Desktop */
+@media (min-width: 992px) {
+    .chia-25 {
+        flex: 2.5;
+    }
+
+    .chia-75 {
+        flex: 7.5;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .chia-25,
+    .chia-75 {
+        flex: 1 1 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .container.trang-chu {
+        flex-direction: column-reverse;
+    }
+
+    .chia-25,
+    .chia-75 {
+        flex: 1 1 100%;
+    }
+}
+
+/* Additional CSS for the slider component */
+.ui-slider {
+    position: relative;
+    text-align: left;
+}
+
+.ui-slider-horizontal {
+    height: 8px;
+}
+
+.ui-slider .ui-slider-range {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #c19a6b;
+    /* Adjust color to match the image */
+}
+
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.ui-slider .ui-slider-handle:focus {
+    outline: none;
+    border: 1px solid #666666;
+}
+
+.filter-type-price {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.filter-type-price label {
+    font-size: 1em;
+    margin-right: 5px;
+}
+
+.filter-type-price input {
+    border: none;
+    font-size: 1em;
+    text-align: center;
+    color: #333333;
+}
+
+.filter-price .price-values {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.filter-type-price {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.filter-type-price label {
+    display: inline-block;
+}
+
+.filter-type-price input {
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+}
+
+.ui-slider-horizontal {
+    height: 5px;
+}
+
+.ui-widget-header {
+    background: #b19361;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+    top: -8px;
+    margin-left: -0.6em;
+}
+
+.ui-slider .ui-slider-handle {
+    border-radius: 50%;
+    outline: 0;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid #c5c5c5;
+    background: #efefef;
+}
+
+.ui-button,
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+html .ui-button.ui-state-disabled:active,
+html .ui-button.ui-state-disabled:hover {
+    background: #f6f6f6;
+    font-weight: 400;
+    color: #454545;
+    border-radius: 50%;
+    outline: 0;
+}
+
+.ui-button.ui-state-active:hover,
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active {
+    background: #f6f6f6;
+    font-weight: 400;
+    color: #454545;
+    border-radius: 50%;
+    outline: 0;
+}
